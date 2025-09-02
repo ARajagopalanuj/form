@@ -1,66 +1,121 @@
-div{
-    background-color:#edede2
-;
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #f0f4f8, #d9e2ec);
+    margin: 0;
+    padding: 0;
+    color: #333;
 }
-body{
-    background-image: linear-gradient(
-    90.5deg, 
-    rgba(112, 181, 176, 1) 1.9%, 
-    rgba(220, 244, 241, 1) 87.7%
-);
+
+center {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 100vh;
+    padding-top: 40px;
 }
-td{
-width:100px;
-height:50px;
-padding: 10px;
-text-decoration-color: aqua;
+
+
+h1 {
+    font-size: 2rem;
+    color: #1e3a8a;
+    margin-bottom: 20px;
+    text-align: center;
 }
-button{
-    background-color:skyblue;
-    color: #000000;
-    font-size:20px;
-    font-style:oblique;
+
+fieldset {
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    border: none;
+    padding: 25px;
+    width: 400px;
+    max-width: 90%;
+}
+
+legend {
+    font-size: 1.2rem;
+    color: #1e40af;
+    font-weight: bold;
+    padding: 0 10px;
+}
+
+
+table {
+    width: 100%;
+    border-spacing: 12px;
+}
+
+
+input[type="text"],
+input[type="number"],
+input[type="email"],
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #cbd5e1;
     border-radius: 8px;
-    cursor: pointer;   
-
+    outline: none;
+    transition: border 0.3s, box-shadow 0.3s;
+    font-size: 0.95rem;
 }
 
-select{
-    block-size:30px;
-    border-radius: 10px;
-}
-input{
-    background-color:floralwhite;
-    block-size: 30px;
-    padding:20px;
-     border: none;
-  padding: 10px 15px;
-           
-    border-radius: 20px;
-    
+input:focus,
+select:focus {
+    border-color: #3b82f6;
+    box-shadow: 0 0 6px rgba(59, 130, 246, 0.5);
 }
 
-input[type="file"]::file-selector-button{
-    
-    color:skyblue;
-    
-    transition:0.3s ;
+input[type="radio"] {
+    margin-right: 6px;
+    accent-color: #2563eb; /* Modern browsers */
+}
+
+button {
+    background: #2563eb;
+    color: white;
+    padding: 10px 20px;
+    border: none;
     border-radius: 8px;
-    cursor:pointer;
-    content: "📁 Choose File";
-}
-input[type="file"]::file-selector-button:hover {
-  background-color: #45a049;
-}
-option{
-    border-radius: 8px;
-    
-}
-fieldset{
-    width:50%;
-   border-color: brown;
-   border-width: 5px;
-    background-color: white;
-    text-decoration-color:color-mix(in srgb, color percentage, color percentage)
+    cursor: pointer;
+    font-size: 0.95rem;
+    margin: 5px;
+    transition: background 0.3s, transform 0.2s;
 }
 
+button:hover {
+    background: #1e40af;
+    transform: translateY(-2px);
+}
+
+
+button[type="reset"] {
+    background: #e11d48;
+}
+
+button[type="reset"]:hover {
+    background: #9f1239;
+}
+
+a {
+    display: inline-block;
+    margin-top: 12px;
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #1e3a8a;
+}
+
+@media (max-width: 480px) {
+    fieldset {
+        width: 95%;
+        padding: 20px;
+    }
+    h1 {
+        font-size: 1.6rem;
+    }
+}
