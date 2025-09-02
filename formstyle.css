@@ -1,0 +1,66 @@
+div{
+    background-color:#edede2
+;
+}
+body{
+    background-image: linear-gradient(
+    90.5deg, 
+    rgba(112, 181, 176, 1) 1.9%, 
+    rgba(220, 244, 241, 1) 87.7%
+);
+}
+td{
+width:100px;
+height:50px;
+padding: 10px;
+text-decoration-color: aqua;
+}
+button{
+    background-color:skyblue;
+    color: #000000;
+    font-size:20px;
+    font-style:oblique;
+    border-radius: 8px;
+    cursor: pointer;   
+
+}
+
+select{
+    block-size:30px;
+    border-radius: 10px;
+}
+input{
+    background-color:floralwhite;
+    block-size: 30px;
+    padding:20px;
+     border: none;
+  padding: 10px 15px;
+           
+    border-radius: 20px;
+    
+}
+
+input[type="file"]::file-selector-button{
+    
+    color:skyblue;
+    
+    transition:0.3s ;
+    border-radius: 8px;
+    cursor:pointer;
+    content: "📁 Choose File";
+}
+input[type="file"]::file-selector-button:hover {
+  background-color: #45a049;
+}
+option{
+    border-radius: 8px;
+    
+}
+fieldset{
+    width:50%;
+   border-color: brown;
+   border-width: 5px;
+    background-color: white;
+    text-decoration-color:color-mix(in srgb, color percentage, color percentage)
+}
+

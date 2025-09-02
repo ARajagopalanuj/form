@@ -1,0 +1,119 @@
+<html>
+<head>
+    <title>student form</title>
+    <link rel="icon" href="formicon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asimovian&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="formstyle.css">
+</head>
+<body>
+<center>
+    <h1><b>Personal Details</b></h1>
+
+    <!--<form>
+        <fieldset>
+            <legend><b>Enter your details</b></legend>
+
+            <table>
+                <tr><td>Name:<br><input type="text" id="name" placeholder="Your name"></td></tr>
+                <tr><td>Age:<br><input type="number" id="age" placeholder="your age"></td></tr>
+                <tr><td>Email Id:<br><input type="email" id="email" placeholder="yourmail@domain.com"></td></tr>
+
+                <tr>
+                    <td>Gender:<br>
+                        <input type="radio" id="genderMale" name="gender" value="male" style="cursor: pointer;">Male
+                        <input type="radio" id="genderFemale" name="gender" value="female" style="cursor: pointer;">Female
+                    </td>
+                </tr>
+
+                <tr><td>PAN No.:<br><input type="text" id="pan" placeholder="PAN Number"></td></tr>
+                <tr><td>Aadhar No.:<br><input type="text" id="aadhar" placeholder="Aadhar Number"></td></tr>
+
+                <tr><td>SSLC Marksheet No:<br><input type="text" id="sslcNo" placeholder="SSLC certificate no"></td></tr>
+                <tr><td>SSLC Total Marks:<br><input type="number" id="sslcMarks" placeholder="SSLC marks"></td></tr>
+                <tr><td>SSLC Marksheet:<br><input type="file" id="sslcFile" name="sslcFile" accept=".pdf" required></td></tr>
+
+                <tr><td>HSC Marksheet:<br><input type="file" id="hscFile" name="hscFile" accept=".pdf" required></td></tr>
+                <tr><td>HSC Marksheet No:<br><input type="text" id="hscNo" placeholder="final certificate no"></td></tr>
+                <tr><td>HSC Total Marks:<br><input type="number" id="hscMarks" placeholder="CGPA"></td></tr>
+
+                <tr>
+                    <td>Course:<br>
+                        <select name="course" id="course">
+                            <option value="ug">UG (7 certificates)</option>
+                            <option value="pg">PG (12 certificates)</option>
+                            <option value="be">B.E (9 certificates)</option>
+                            <option value="me">M.E (13 certificates)</option>
+                        </select>
+                    </td>
+                </tr>
+
+                <tr><td>Upload Certificates:<br><input type="file" id="certificates" name="files" multiple required></td></tr>
+                <tr><td>Final CGPA:<br><input type="number" id="cgpa" placeholder="final degree cgpa"></td></tr>
+
+                <tr>
+                    <td colspan="2" align="right">
+                        <button type="reset" id="resetBtn">Reset</button>
+                        <button type="submit" id="submitBtn">Submit</button>
+                    </td>
+                </tr>
+            </table>
+        </fieldset>
+    </form>-->
+<form id="studentForm" action="submitForm" method="post" enctype="multipart/form-data">
+    <fieldset>
+        <legend><b>Enter your details</b></legend>
+        <table>
+            <tr><td>Name:<br><input type="text" name="name" id="name" placeholder="Your name" required></td></tr>
+            <tr><td>Age:<br><input type="number" name="age" id="age" placeholder="your age" required></td></tr>
+            <tr><td>Email Id:<br><input type="email" name="emailid" id="email" placeholder="yourmail@domain.com" required></td></tr>
+
+            <tr>
+                <td>Gender:<br>
+                    <input type="radio" name="gender" value="male" required>Male
+                    <input type="radio" name="gender" value="female">Female
+                </td>
+            </tr>
+
+            <tr><td>PAN No.:<br><input type="text" name="pan_no" id="pan" placeholder="PAN Number" required></td></tr>
+            <tr><td>Aadhar No.:<br><input type="text" name="aadhar_no" id="aadhar" placeholder="Aadhar Number" required></td></tr>
+
+            <tr><td>SSLC Marksheet No:<br><input type="text" name="sslc_no" id="sslcNo" placeholder="SSLC certificate no" required></td></tr>
+            <tr><td>SSLC Total Marks:<br><input type="number" name="sslc_marks" id="sslcMarks" required></td></tr>
+            
+            <tr><td>HSC Marksheet No:<br><input type="text" name="hsc_marksheet_NO" id="hscNo" required></td></tr>
+            <tr><td>HSC Total Marks:<br><input type="number" name="hsc_marks" id="hscMarks" required></td></tr>
+
+            <tr>
+                <td>Course:<br>
+                    <select name="course" id="course" required>
+                        <option value="ug">UG (7 certificates)</option>
+                        <option value="pg">PG (12 certificates)</option>
+                        <option value="be">B.E (9 certificates)</option>
+                        <option value="me">M.E (13 certificates)</option>
+                    </select>
+                </td>
+            </tr>
+
+           
+            <tr><td>Final CGPA:<br><input type="number" step="0.01" name="CGPA" id="cgpa" required></td></tr>
+
+            <tr>
+                <td colspan="2" align="right">
+                    <button type="reset">Reset</button>
+                    <button type="submit">Submit</button>
+                   
+                </td>
+            </tr>
+        </table>
+         <a href="user.html">Already User ?</a>
+    </fieldset>
+</form>
+
+    
+</center>
+<script src="formscript.js"></script>
+</body>
+</html>
+

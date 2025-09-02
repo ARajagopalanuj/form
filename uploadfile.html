@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        upload documents in studentform
+        <link rel="stylesheet" href="upload.css">
+    </head>
+    <body>
+        
+        
+            
+            <form action="upload.php" method="post" enctype="multipart/form-data">
+          
+                <fieldset>
+            <legend><b>Upload your documents</b></legend>
+        
+                 <table class="uploadfiles"></table>
+            <tr><td>HSC Marksheet:<br><input type="file" name="hscmarksheet" id="hscFile" accept=".pdf" required></td></tr>
+              <tr><td>SSLC Marksheet:<br><input type="file" name="sslcmarksheet" id="sslcFile" accept=".pdf" required></td></tr>
+               <tr><td>Upload Certificates:<br><input type="file" name="certificates" id="certificates" accept=".pdf" required></td></tr>
+              
+               <tr><td style="text-align:right"><button>submit</button></td></tr>
+               </table>
+           
+              </fieldset>
+                </form>
+            
+           
+            
+          
+        
+</html>
