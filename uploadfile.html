@@ -1,31 +1,37 @@
 <!DOCTYPE html>
-<html>
-    <head>
-        upload documents in studentform
-        <link rel="stylesheet" href="upload.css">
-    </head>
-    <body>
-        
-        
-            
-            <form action="upload.php" method="post" enctype="multipart/form-data">
-          
-                <fieldset>
-            <legend><b>Upload your documents</b></legend>
-        
-                 <table class="uploadfiles"></table>
-            <tr><td>HSC Marksheet:<br><input type="file" name="hscmarksheet" id="hscFile" accept=".pdf" required></td></tr>
-              <tr><td>SSLC Marksheet:<br><input type="file" name="sslcmarksheet" id="sslcFile" accept=".pdf" required></td></tr>
-               <tr><td>Upload Certificates:<br><input type="file" name="certificates" id="certificates" accept=".pdf" required></td></tr>
-              
-               <tr><td style="text-align:right"><button>submit</button></td></tr>
-               </table>
-           
-              </fieldset>
-                </form>
-            
-           
-            
-          
-        
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Upload Documents</title>
+    <link rel="stylesheet" href="upload.css">
+</head>
+<body>
+    <div class="container">
+        <div class="title">Upload Your Documents</div>
+
+        <div class="login-box">
+            <form action="upload.php" method="post" enctype="multipart/form-data" autocomplete="off">
+                <table border="0" cellpadding="8" cellspacing="0">
+                    <tr>
+                        <td><label for="hscFile">HSC Marksheet:</label></td>
+                        <td><input type="file" name="hscmarksheet" id="hscFile" accept=".pdf" required title="Upload your HSC marksheet in PDF format"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="sslcFile">SSLC Marksheet:</label></td>
+                        <td><input type="file" name="sslcmarksheet" id="sslcFile" accept=".pdf" required title="Upload your SSLC marksheet in PDF format"></td>
+                    </tr>
+                    <tr>
+                        <td><label for="certificates">Certificates:</label></td>
+                        <td><input type="file" name="certificates" id="certificates" accept=".pdf" multiple required title="You can upload multiple certificate PDFs"></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align:center;">
+                            <button type="submit">Submit</button>
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</body>
 </html>

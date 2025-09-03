@@ -1,49 +1,87 @@
-table.uploadfiles input[type="file"]{
-    width:100%;
-    padding:5px;
-   
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #74ebd5, #9face6);
+    margin: 0;
+    padding: 0;
 }
-table.uploadfiles button{
-    background: color #007bff;
-    color: white;
-    border:none;
-    padding:10px 20px;
+
+
+.container {
+    text-align: center;
+    padding-top: 80px;
+}
+
+
+.title {
+    font-size: 32px;
+    font-weight: bold;
+    margin-bottom: 40px;
+    color: #333;
+    text-shadow: 1px 1px 3px #fff;
+}
+
+
+.login-box {
+    background: #fff;
+    width: 500px;
+    margin: 0 auto;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+
+.login-box table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.login-box td {
+    padding: 12px;
+    text-align: left;
+    vertical-align: middle;
+    font-size: 15px;
+    color: #444;
+}
+
+
+.login-box label {
+    font-weight: bold;
+    color: #333;
+}
+
+
+.login-box input[type="file"] {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #bbb;
     border-radius: 6px;
-    cursor:pointer;
+    background: #f9f9f9;
+    transition: 0.3s;
+    cursor: pointer;
+}
 
+.login-box input[type="file"]:focus {
+    border-color: #5e72e4;
+    outline: none;
+    box-shadow: 0 0 5px rgba(94,114,228,0.5);
 }
-table.uploadfiles button:hover{
-     background-color: #0056b3;
-}
-body{
-    background-image: linear-gradient(
-    90.5deg, 
-    rgba(112, 181, 176, 1) 1.9%, 
-    rgba(220, 244, 241, 1) 87.7%
-);
-}
-button{
-    background-color:skyblue;
-    color: #000000;
-    font-size:20px;
-    font-style:oblique;
-    border-radius: 8px;
-    cursor: pointer;   
 
+
+.login-box button {
+    width: 100%;
+    padding: 12px;
+    background: #5e72e4;
+    border: none;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
 }
-input[type="file"]::file-selector-button{
-    background-color: white;
-    color:skyblue;
-    
-    transition:0.3s ;
-    border-radius: 8px;
-    cursor:pointer;
-    content: "📁 Choose File";
-}
-input[type="file"]::file-selector-button:hover {
-  background-color: #45a049;
-}
-table.uploadfiles input[type="file"]{
-    padding:5px;
-    width: auto; 
+
+.login-box button:hover {
+    background: #324cdd;
 }
