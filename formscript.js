@@ -26,7 +26,7 @@ document.getElementById("studentForm").addEventListener("submit", async function
             CGPA: parseFloat(cgpa)
         };
 
-        const response = await fetch(" https://d8b75f616b01.ngrok-free.app/student/details/addData", {
+        const response = await fetch(" https://04804069ea6c.ngrok-free.app/student/details/addData", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(studentData)
