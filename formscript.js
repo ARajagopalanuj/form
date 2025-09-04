@@ -67,7 +67,7 @@ document.getElementById("studentForm").addEventListener("submit", async function
     };
 
     try {
-        const response = await fetch("https://6afb714c69fc.ngrok-free.app /student/details/addData", {
+        const response = await fetch("https://6afb714c69fc.ngrok-free.app/student/details/addData", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(studentData)
