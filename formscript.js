@@ -2,47 +2,49 @@ document.getElementById("studentForm").addEventListener("submit", async function
     e.preventDefault();
 
     const name = document.getElementById("name").value.trim();
-    const age = document.getElementById("age").value.trim();
-    const email = document.getElementById("email").value.trim();
-    const pan = document.getElementById("pan").value.trim();
-    const aadhar = document.getElementById("aadhar").value.trim();
-    const sslcNo = document.getElementById("sslcNo").value.trim();
-    const sslcMarks = document.getElementById("sslcMarks").value.trim();
-    const cgpa = document.getElementById("cgpa").value.trim();
-
-  
-    if (!name) {
+     if (!name) {
         alert("Please enter your name.");
         return;
     }
-    if (!/^[a-zA-Z ]+$/.test(name)) {
+      if (!/^[a-zA-Z ]+$/.test(name)) {
         alert("Name can only contain letters and spaces.");
         return;
     }
+    const age = document.getElementById("age").value.trim();
     if (!age || isNaN(age) || age < 10 || age > 100) {
         alert("Please enter a valid age between 10 and 100.");
         return;
     }
-    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+   
+    const email = document.getElementById("email").value.trim();
+     if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         alert("Please enter a valid email address.");
         return;
     }
-    if (!pan || !/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(pan)) {
+    const pan = document.getElementById("pan").value.trim();
+     if (!pan || !/^[A-Z]{5}[0-9]{4}[A-Z]{1}$/.test(pan)) {
         alert("Please enter a valid PAN number (e.g., ABCDE1234F).");
         return;
     }
+    const aadhar = document.getElementById("aadhar").value.trim();
+    
     if (!aadhar || !/^[0-9]{12}$/.test(aadhar)) {
         alert("Please enter a valid 12-digit Aadhar number.");
         return;
     }
+    const sslcNo = document.getElementById("sslcNo").value.trim();
+    
     if (!sslcNo) {
         alert("Please enter SSLC number.");
         return;
     }
-    if (!sslcMarks || isNaN(sslcMarks) || sslcMarks < 0 || sslcMarks > 500) {
+    const sslcMarks = document.getElementById("sslcMarks").value.trim();
+      if (!sslcMarks || isNaN(sslcMarks) || sslcMarks < 0 || sslcMarks > 500) {
         alert("Please enter valid SSLC marks (0 - 500).");
         return;
     }
+    const cgpa = document.getElementById("cgpa").value.trim();
+   
     if (!cgpa || isNaN(cgpa) || cgpa < 0 || cgpa > 10) {
         alert("Please enter a valid CGPA (0 - 10).");
         return;
@@ -65,7 +67,7 @@ document.getElementById("studentForm").addEventListener("submit", async function
     };
 
     try {
-        const response = await fetch("https://0dad71dee8cb.ngrok-free.app/student/details/addData", {
+        const response = await fetch("https://6afb714c69fc.ngrok-free.app /student/details/addData", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(studentData)
