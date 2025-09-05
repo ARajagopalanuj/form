@@ -110,7 +110,7 @@ document.getElementById("user").addEventListener("submit",async function(e) {
             alert(message);
         }else{
             const errorText=response.text();
-            alert(message);
+            alert(errorText);
         }
 
         
