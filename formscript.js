@@ -106,10 +106,10 @@ document.getElementById("user").addEventListener("submit",async function(e) {
             body: JSON.stringify(userData)
         });
         if(response.ok){
-            const message=response.text();
+            const message=await response.text();
             alert(message);
         }else{
-            const errorText=response.text();
+            const errorText=await response.text();
             alert(errorText);
         }
 
