@@ -67,7 +67,7 @@ document.getElementById("studentForm").addEventListener("submit", async function
     };
 
     try {
-        const response = await fetch("https://6afb714c69fc.ngrok-free.app/student/details/addData", {
+        const response = await fetch(" https://4b8dcca05292.ngrok-free.app/student/details/addData", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(studentData)
@@ -85,4 +85,39 @@ document.getElementById("studentForm").addEventListener("submit", async function
         console.error("Fetch error:", error);
         alert("Could not connect to the server.");
     }
+});
+document.getElementById("user").addEventListener("submit",async function(e) {
+    e.preventDefault();
+    const user=document.getElementById("login-username").value.trim();
+    const password=document.getElementById("login-password").value.trim();
+  
+     if (!user || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+        alert("Please enter a valid email address.");
+        return;
+    }
+    const userData={
+        user: user,
+        password: password
+    };
+    try{
+        const response= await fetch("https://4b8dcca05292.ngrok-free.app/student/details/login",{
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(userData)
+        });
+        if(response.ok){
+            const message=response.text();
+            alert(message);
+        }else{
+            const errorText=response.text();
+            alert(message);
+        }
+
+        
+    }catch (error) {
+        console.error("Fetch error:", error);
+        alert("Could not connect to the server.");
+    }
+
+    
 });
