@@ -52,13 +52,16 @@ studentForm.addEventListener("submit", async function (e) {
         alert("Please enter a valid CGPA (0 - 10).");
         return;
     }
+    const gender=document.getElementById("gender").value.trim();
+    const hscMarkSheetNo=document.getElementById("hscNo").value.trim();
+    const course=document.getElementById("state").value.trim();
 
  
     const studentData = {
         name: name,
         age: parseInt(age),
         emailid: email,
-        gender: "N/A",
+        gender: ,
         pan_no: pan,
         aadhar_no: aadhar,
         sslc_no: sslcNo,
@@ -172,7 +175,7 @@ window.getData=async function(){
                       studentData.forEach(student => {
       details.innerHTML += `
 <div class="student-card">
-    <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+    <table border="1" cellpadding="5" cellspacing="0" width: 100%;">
         <tr>
             <th>Name</th>
             <td>${student.name || '-'}</td>
