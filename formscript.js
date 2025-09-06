@@ -1,4 +1,7 @@
-document.getElementById("studentForm").addEventListener("submit", async function (e) {
+document.addEventListener("DOMContentLoaded", function(){
+const studentForm=document.getElementById("studentForm");
+if(studentForm){
+studentForm.addEventListener("submit", async function (e) {
     e.preventDefault();
 
     const name = document.getElementById("name").value.trim();
@@ -67,7 +70,7 @@ document.getElementById("studentForm").addEventListener("submit", async function
     };
 
     try {
-        const response = await fetch(" https://4b8dcca05292.ngrok-free.app/student/details/addData", {
+        const response = await fetch(" http://localhost:8080/student/details/addData", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(studentData)
@@ -86,12 +89,17 @@ document.getElementById("studentForm").addEventListener("submit", async function
         alert("Could not connect to the server.");
     }
 });
-document.getElementById("user").addEventListener("submit",async function(e) {
+}
+const userForm=document.getElementById("user")
+
+    if(userForm){
+    userForm.addEventListener("submit",async function(e) {
     e.preventDefault();
+  
     const user=document.getElementById("login-username").value.trim();
     const password=document.getElementById("login-password").value.trim();
   
-     if (!user || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+     if (!user || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(user)) {
         alert("Please enter a valid email address.");
         return;
     }
@@ -100,18 +108,20 @@ document.getElementById("user").addEventListener("submit",async function(e) {
         password: password
     };
     try{
-        const response= await fetch("https://4b8dcca05292.ngrok-free.app/student/details/login",{
+        const response= await fetch("http://localhost:8080/student/details/login",{
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(userData)
         });
         if(response.ok){
             const message=await response.text();
-            alert(message);
+            localStorage.setItem("user",user);
+            localStorage.setItem("name",message);
         }else{
             const errorText=await response.text();
             alert(errorText);
         }
+          window.location.href="showDetails.html";
 
         
     }catch (error) {
@@ -121,3 +131,116 @@ document.getElementById("user").addEventListener("submit",async function(e) {
 
     
 });
+    }
+    const result=document.getElementById("result");
+
+    if(result){
+        const data=localStorage.getItem("name");
+        if(data){
+            try{
+            const object=JSON.parse(data);
+            result.innerText="Hi welcome "+(object.message)||"No message found";
+              
+              
+            }catch(e){
+               console.error("Fetch Error: ",error);
+               alert("something errors");
+            }
+        }else{
+            result.innerText="No result available.";
+        }
+    }   
+window.getData=async function(){
+    alert("connected");
+        let username=localStorage.getItem("user").trim();
+        console.log(username);
+        const details=document.getElementById("Details");
+        const userData={
+            user:username
+        };
+        try{
+            const response= await fetch("http://localhost:8080/student/details/getData",{
+                method:"POST",
+                headers:{ "Content-Type": "application/json" },
+                body:JSON.stringify(userData)
+            });
+            if(response.ok){
+                const data=await response.json();
+                console.log(data);
+                const studentData=Array.isArray(data.message)?data.message:[];
+                details.innerHtml="<h3> your Details<h3>";
+                      studentData.forEach(student => {
+      details.innerHTML += `
+<div class="student-card">
+    <table border="1" cellpadding="5" cellspacing="0" style="border-collapse: collapse; width: 100%;">
+        <tr>
+            <th>Name</th>
+            <td>${student.name || '-'}</td>
+        </tr>
+        <tr>
+            <th>Age</th>
+            <td>${student.age || '-'}</td>
+        </tr>
+        <tr>
+            <th>Email</th>
+            <td>${student.emailid || '-'}</td>
+        </tr>
+        <tr>
+            <th>Gender</th>
+            <td>${student.gender || '-'}</td>
+        </tr>
+        <tr>
+            <th>PAN No</th>
+            <td>${student.panNo || '-'}</td>
+        </tr>
+        <tr>
+            <th>Aadhar No</th>
+            <td>${student.aadharNO || '-'}</td>
+        </tr>
+        <tr>
+            <th>SSLC No</th>
+            <td>${student.sslcNo || '-'}</td>
+        </tr>
+        <tr>
+            <th>SSLC Marks</th>
+            <td>${student.sslcMarks || '-'}</td>
+        </tr>
+        <tr>
+            <th>HSC Marksheet No</th>
+            <td>${student.hscMarkSheetNo || '-'}</td>
+        </tr>
+        <tr>
+            <th>HSC Marks</th>
+            <td>${student.hscMarks || '-'}</td>
+        </tr>
+        <tr>
+            <th>Course</th>
+            <td>${student.course || '-'}</td>
+        </tr>
+        <tr>
+            <th>CGPA</th>
+            <td>${student.cgpa || '-'}</td>
+        </tr>
+    </table>
+    <hr>
+</div>
+`;
+
+
+                });
+            }else{
+                details.innerText="Error: " +await response.text();
+            }
+
+        }catch(e){
+            console.error("Fetch error:", e);
+        details.innerText = "Could not fetch details from server.";
+
+        }
+        
+    }
+
+
+
+});
+
