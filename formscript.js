@@ -61,14 +61,14 @@ studentForm.addEventListener("submit", async function (e) {
         name: name,
         age: parseInt(age),
         emailid: email,
-        gender: ,
+        gender: gender,
         pan_no: pan,
         aadhar_no: aadhar,
         sslc_no: sslcNo,
         sslc_marks: parseInt(sslcMarks),
-        hsc_marksheet_NO: "N/A",
+        hsc_marksheet_NO: hscMarkSheetNo,
         hsc_marks: 0,
-        course: "N/A",
+        course: course,
         CGPA: parseFloat(cgpa)
     };
 
