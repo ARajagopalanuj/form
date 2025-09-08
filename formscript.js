@@ -82,7 +82,6 @@ studentForm.addEventListener("submit", async function (e) {
         if (response.ok) {
             const msg = await response.text();
             alert(msg);
-            window.location.href = "uploadfile.html";
         } else {
             const errorText = await response.text();
             alert("Error: " + errorText);
@@ -154,7 +153,6 @@ const userForm=document.getElementById("user")
         }
     }   
 window.getData=async function(){
-    alert("connected");
         let username=localStorage.getItem("user").trim();
         console.log(username);
         const details=document.getElementById("Details");
