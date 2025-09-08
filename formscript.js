@@ -46,6 +46,7 @@ studentForm.addEventListener("submit", async function (e) {
         alert("Please enter valid SSLC marks (0 - 500).");
         return;
     }
+    const hsc_marks=document.getElementById("hscMarks").value.trim();
     const cgpa = document.getElementById("cgpa").value.trim();
    
     if (!cgpa || isNaN(cgpa) || cgpa < 0 || cgpa > 10) {
@@ -67,7 +68,7 @@ studentForm.addEventListener("submit", async function (e) {
         sslc_no: sslcNo,
         sslc_marks: parseInt(sslcMarks),
         hsc_marksheet_NO: hscMarkSheetNo,
-        hsc_marks: 0,
+        hsc_marks:hsc_marks,
         course: course,
         CGPA: parseFloat(cgpa)
     };
@@ -173,7 +174,7 @@ window.getData=async function(){
                       studentData.forEach(student => {
       details.innerHTML += `
 <div class="student-card">
-    <table border="1" cellpadding="5" cellspacing="0" width: 100%;">
+    <table align="center" border="1" cellpadding="5" cellspacing="0" width: 100%;">
         <tr>
             <th>Name</th>
             <td>${student.name || '-'}</td>
