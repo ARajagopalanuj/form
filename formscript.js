@@ -73,7 +73,7 @@ studentForm.addEventListener("submit", async function (e) {
     };
 
     try {
-        const response = await fetch("  https://5748f4a6cfe3.ngrok-free.app/student/details/addData", {
+        const response = await fetch(" https://d2ca95e4f98c.ngrok-free.app/student/details/addData", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(studentData)
@@ -110,7 +110,7 @@ const userForm=document.getElementById("user")
         password: password
     };
     try{
-        const response= await fetch(" https://5748f4a6cfe3.ngrok-free.app/student/details/login",{
+        const response= await fetch("https://d2ca95e4f98c.ngrok-free.app/student/details/login",{
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(userData)
@@ -160,7 +160,7 @@ window.getData=async function(){
             user:username
         };
         try{
-            const response= await fetch(" https://5748f4a6cfe3.ngrok-free.app/student/details/getData",{
+            const response= await fetch("https://d2ca95e4f98c.ngrok-free.app/student/details/getData",{
                 method:"POST",
                 headers:{ "Content-Type": "application/json" },
                 body:JSON.stringify(userData)
