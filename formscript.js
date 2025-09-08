@@ -47,6 +47,10 @@ studentForm.addEventListener("submit", async function (e) {
         return;
     }
     const hsc_marks=document.getElementById("hscMarks").value.trim();
+    if (!hsc_marks || isNaN(hsc_marks) || hsc_marks < 0 || hsc_marks> 1200) {
+        alert("Please enter valid SSLC marks (0 - 500).");
+        return;
+    }
     const cgpa = document.getElementById("cgpa").value.trim();
    
     if (!cgpa || isNaN(cgpa) || cgpa < 0 || cgpa > 10) {
