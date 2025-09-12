@@ -9,7 +9,7 @@
 </head>
 <body>
 <center>
-    <h1><b>Personal Details</b></h1>
+    <h1><b>Enter your details</b></h1>
 
     <!--<form>
         <fieldset>
@@ -63,7 +63,7 @@
     </form>-->
 <form id="studentForm" action="submitForm" method="post" enctype="multipart/form-data">
     <fieldset>
-        <legend><b>Enter your details</b></legend>
+        <legend><b>Personal Details</b></legend>
         <table>
             <tr><td>Name:<br><input type="text" name="name" id="name" placeholder="Your name" required></td></tr>
             <tr><td>Age:<br><input type="number" name="age" id="age" placeholder="your age" required></td></tr>
@@ -131,6 +131,7 @@
 
            
             <tr><td>Final CGPA:<br><input type="number" step="0.01" name="CGPA" id="cgpa" required></td></tr>
+            <tr><td>Certificates<input type="file" name="files" id="multiFileInput" multiple> </td></tr>
 
             <tr>
                 <td colspan="2" align="right">
