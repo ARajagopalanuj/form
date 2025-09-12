@@ -247,6 +247,6 @@ window.getData=async function(){
     }
 
 
-
+localStorage.clear();
 });
 
